@@ -1,11 +1,9 @@
+import { ProductService } from "@/services/ProductService"
+
 const IndexViewModel = {
-  data() {
-    return {
-      hello: 'world',
-    }
-  },
   mounted() {
-    console.log('Hello World')
+    return ProductService.fetchListOfProducts()
+      .catch((err) => window.alert(err))
   }
 }
 
