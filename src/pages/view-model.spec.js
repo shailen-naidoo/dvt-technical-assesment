@@ -20,11 +20,11 @@ describe('Test Index.vue', () => {
         // 2. ACTION
         mount(Index)
 
-        return flushPromises().then(() => {
+        return flushPromises().then((args) => {
           // 3. ASSERT
           expect(axios.get).toBeCalledTimes(1)
           expect(axios.get).toBeCalledWith('https://fakestoreapi.com/products')
-          expect(alertSpy).toBeCalledTimes(2)
+          expect(alertSpy).toBeCalledTimes(1)
           expect(alertSpy).toBeCalledWith('Network request failed!')
         })
       })
