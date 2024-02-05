@@ -8,8 +8,12 @@ const IndexViewModel = {
     return { products }
   },
   methods: {
+    /**
+     * @param {number} productIndex
+     * @param {string} quantityValue - Value provided by a select tag which publishes a string value but we need a number
+     */
     setProductQuantity(productIndex, quantityValue) {
-      this.products[productIndex].quantity = quantityValue
+      this.products[productIndex].quantity = parseInt(quantityValue)
     }
   },
   mounted() {
