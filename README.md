@@ -45,7 +45,7 @@ Dear reviewer, thank you for taking the time to review my work, it is greatly ap
 3. You will need to source the `dev.sh` in your terminal and run the command `install_dependencies` or alternatively if you are not a big fan of shell scripts you can run `npm install` instead.
 4. There are several commands made available to you in the `package.json` file such as `npm run dev`, `npm run test:unit` which is very important for the general development of the project.
 5. If you do not mind shell commands I have abstracted those commands away into shell commands such as `run_application` and `run_unit_tests`.
-6. I am going to assume that you love shell commands and so that is what I will use for now. You can run the command `run_unit_tests§` and you will notice that the test framework will boot up and run the test files and they all should pass.
+6. I am going to assume that you love shell commands and so that is what I will use for now. You can run the command `run_unit_tests` and you will notice that the test framework will boot up and run the test files and they all should pass.
 7. You can then run the `run_application` command and this will boot up the application, you can visit the URL that is logged to the terminal and you will see the application live in your browser.
 
 Please feel free to reach out to me if you have any questions, I am more than happy to assist in anyway that I can.
