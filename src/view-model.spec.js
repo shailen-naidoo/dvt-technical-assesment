@@ -1,6 +1,7 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, test } from 'vitest'
+import router from './router'
 import App from './App.vue'
 
 beforeEach(() => {
@@ -12,7 +13,11 @@ describe('Test App.vue', () => {
     describe('Happy cases', () => {
       test('If the user selects some items in the listing product page, the "View Cart" link should be updated with the number of items in the cart', () => {
         // 1. SETUP
-        const wrapper = shallowMount(App)
+        const wrapper = mount(App, {
+          global: {
+            plugins: [router],
+          },
+        })
 
         // 2. ACTION - Emulating that a user has selected a product in the product listing page
         wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 3 })
