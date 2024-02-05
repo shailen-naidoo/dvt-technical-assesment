@@ -11,6 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install nvm
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+        shell: bash
+
       - name: Read .nvmrc
         run: |
           echo "{NVMRC}={$(cat .nvmrc)}" >> $GITHUB_OUTPUT
