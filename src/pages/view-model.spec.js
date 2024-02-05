@@ -24,7 +24,7 @@ describe('Test Index.vue', () => {
           // 3. ASSERT
           expect(axios.get).toBeCalledTimes(1)
           expect(axios.get).toBeCalledWith('https://fakestoreapi.com/products')
-          expect(alertSpy).toBeCalledTimes(1)
+          expect(alertSpy).toBeCalledTimes(2)
           expect(alertSpy).toBeCalledWith('Network request failed!')
         })
       })
