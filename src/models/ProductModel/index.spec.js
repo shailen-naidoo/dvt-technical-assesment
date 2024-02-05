@@ -19,6 +19,7 @@ describe('Test ProductModel', () => {
       category: 'Electronics',
       description: 'The latest Samsung Galaxy Note 10 device',
       image: 'https://image.com',
+      quantity: 0,
     })
   })
 })

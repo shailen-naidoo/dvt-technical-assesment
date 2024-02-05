@@ -34,6 +34,30 @@ describe('Test Index.vue', () => {
     })
 
     describe('Happy cases', () => {
+
+      test('When the user selects an item to be added to the cart by selecting a quantity via the dropdown, it should update the quantity property on the item accordingly', () => {
+        // 1. SETUP
+        axios.get.mockResolvedValueOnce({
+          data: [
+            { title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com' },
+            { title: 'B', price: 500, category: 'Electronics', description: 'Hello World', image: 'https://image.com' },
+          ]
+        })
+
+        const wrapper = mount(Index)
+
+        const PRODUCT_INDEX = 1
+        const QUANTITY_VALUE = 3
+
+        return flushPromises().then(() => {
+          // 2. ACTION
+          wrapper.vm.setProductQuantity(PRODUCT_INDEX, QUANTITY_VALUE)
+
+          // 3. ASSERT
+          expect(wrapper.vm.products[PRODUCT_INDEX].quantity).toBe(3)
+        })
+      })
+
       test('When the user visits the webapp it should fetch a list of products and display it to the user', () => {
         // 1. SETUP
         axios.get.mockResolvedValueOnce({

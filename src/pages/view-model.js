@@ -7,6 +7,11 @@ const IndexViewModel = {
 
     return { products }
   },
+  methods: {
+    setProductQuantity(productIndex, quantityValue) {
+      this.products[productIndex].quantity = quantityValue
+    }
+  },
   mounted() {
     return ProductService.fetchListOfProducts()
       .then((products) => { products.forEach((product) => this.products.push(product)) })

@@ -5,6 +5,9 @@ class ProductModel {
     this.category = product.category
     this.description = product.description
     this.image = product.image
+
+    // values that are defined by us
+    this.quantity = 0
   }
 }
 
