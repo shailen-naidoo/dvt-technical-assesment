@@ -75,8 +75,8 @@ describe('Test Index.vue', () => {
           expect(axios.get).toBeCalledTimes(1)
           expect(axios.get).toBeCalledWith('https://fakestoreapi.com/products')
           expect(wrapper.vm.products).toEqual([
-            { title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com' },
-            { title: 'B', price: 500, category: 'Electronics', description: 'Hello World', image: 'https://image.com' },
+            { title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 },
+            { title: 'B', price: 500, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 },
           ])
         })
       })
