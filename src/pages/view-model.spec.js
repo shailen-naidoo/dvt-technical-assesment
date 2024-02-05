@@ -1,5 +1,6 @@
 import { mount, flushPromises } from "@vue/test-utils";
 import { describe, test, expect, vi, beforeEach } from "vitest";
+import { setActivePinia, createPinia } from 'pinia'
 import Index from './Index.vue'
 import axios from "axios";
 
@@ -7,6 +8,8 @@ vi.mock('axios')
 
 beforeEach(() => {
   vi.resetAllMocks()
+
+  setActivePinia(createPinia())
 })
 
 describe('Test Index.vue', () => {
