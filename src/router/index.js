@@ -5,9 +5,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('@/pages/Index.vue')
-    }
-  ]
+      component: () => import('@/pages/Index.vue'),
+    },
+    {
+      path: '/cart',
+      component: () => import('@/pages/cart/Index.vue'),
+    },
+  ],
 })
 
 export default router
