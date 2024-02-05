@@ -1,4 +1,5 @@
 import { useProductsStore } from '@/stores/products'
+import { BASE_QUANTITY } from './constants'
 
 const AppViewModel = {
   setup() {
@@ -9,7 +10,7 @@ const AppViewModel = {
   computed: {
     numberOfProductsSelected() {
       return this.products
-        .filter((product) => product.quantity > 0)
+        .filter((product) => product.quantity > BASE_QUANTITY)
         .length
     }
   }
