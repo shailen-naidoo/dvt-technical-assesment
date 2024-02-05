@@ -1,6 +1,6 @@
 <template>
   <main class="container mx-auto">
-    <p class="text-gray-500 text-sm mb-2 ml-4 mt-4">Total price of cart: R{{ totalPriceOfCart }}</p>
+    <p class="text-sm mb-2 ml-4 mt-4">Total price of cart: R{{ totalPriceOfCart }}</p>
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <article v-for="product in productsSelected" :key="product" class="card bg-white rounded-md p-4 shadow-md hover:shadow-lg cursor-pointer">
         <img :src="product.image" :alt="product.title" class="w-full h-48 object-cover" />
