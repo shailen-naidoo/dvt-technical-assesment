@@ -1,5 +1,6 @@
 import { ProductService } from "@/services/ProductService"
 import { useProductsStore } from '@/stores/products'
+import { assignProducts } from "./private"
 
 const IndexViewModel = {
   setup() {
@@ -18,7 +19,7 @@ const IndexViewModel = {
   },
   mounted() {
     return ProductService.fetchListOfProducts()
-      .then((products) => { products.forEach((product) => this.products.push(product)) })
+      .then((products) => assignProducts(this, products))
       .catch((err) => window.alert(err))
   }
 }
