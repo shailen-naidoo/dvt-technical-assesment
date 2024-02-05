@@ -1,4 +1,4 @@
-import { BASE_QUANTITY } from '@/constants'
+import { BASE_QUANTITY } from '@/models/ProductModel/constants'
 import { useProductsStore } from '@/stores/products'
 import { BASE_TOTAL_PRICE } from './constants'
 

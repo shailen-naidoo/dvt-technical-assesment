@@ -1,3 +1,5 @@
+import { BASE_QUANTITY } from "./constants"
+
 class ProductModel {
   constructor(product) {
     this.title = product.title
@@ -7,7 +9,7 @@ class ProductModel {
     this.image = product.image
 
     // values that are defined by us
-    this.quantity = 0
+    this.quantity = BASE_QUANTITY
   }
 }
 

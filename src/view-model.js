@@ -1,5 +1,5 @@
 import { useProductsStore } from '@/stores/products'
-import { BASE_QUANTITY } from './constants'
+import { BASE_QUANTITY } from '@/models/ProductModel/constants'
 
 const AppViewModel = {
   setup() {
