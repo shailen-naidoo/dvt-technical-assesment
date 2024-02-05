@@ -21,10 +21,10 @@ jobs:
           echo "{NVMRC}={$(cat .nvmrc)}" >> $GITHUB_OUTPUT
         id: nvm
 
-      - name: Use Node.js from .nvmrc file
-        uses: actions/setup-node@v3
-        with:
-          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+      # - name: Use Node.js from .nvmrc file
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
       - name: Install dependencies
         run: |
