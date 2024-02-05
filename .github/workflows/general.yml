@@ -1,0 +1,38 @@
+name: Node.js Tests and Linting
+
+on:
+  push:
+    branches: [ '*' ]
+
+jobs:
+  build-test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Read .nvmrc
+        run: |
+          echo "{NVMRC}={$(cat .nvmrc)}" >> $GITHUB_OUTPUT
+        id: nvm
+
+      - name: Use Node.js from .nvmrc file
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+
+      - name: Install dependencies
+        run: |
+          source dev.sh
+          install_dependencies
+
+      - name: Run linter
+        run: |
+          source dev.sh
+          run_lint
+
+      - name: Run unit tests
+        run: |
+          source dev.sh
+          run_unit_tests
+
