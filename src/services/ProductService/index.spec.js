@@ -34,8 +34,8 @@ describe('Test ProductService', () => {
 
         // 3. ASSERT
         expect(products).toHaveLength(2)
-        expect(products[0]).toEqual({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com' })
-        expect(products[1]).toEqual({ title: 'B', price: 500, category: 'Electronics', description: 'Hello World', image: 'https://image.com' })
+        expect(products[0]).toEqual({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 })
+        expect(products[1]).toEqual({ title: 'B', price: 500, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 })
         
         products.forEach((product) => {
           expect(product).toBeInstanceOf(ProductModel)

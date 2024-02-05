@@ -1,5 +1,6 @@
 import { describe, test, expect } from "vitest"
 import { ProductModel } from "."
+import { BASE_QUANTITY } from "./constants"
 
 describe('Test ProductModel', () => {
   test('Is the ProductModel created with the correct properties', () => {
@@ -19,6 +20,7 @@ describe('Test ProductModel', () => {
       category: 'Electronics',
       description: 'The latest Samsung Galaxy Note 10 device',
       image: 'https://image.com',
+      quantity: BASE_QUANTITY,
     })
   })
 })
