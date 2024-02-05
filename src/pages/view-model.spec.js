@@ -20,7 +20,7 @@ describe('Test Index.vue', () => {
         // 2. ACTION
         mount(Index)
 
-        return flushPromises().then((args) => {
+        return flushPromises().then(() => {
           // 3. ASSERT
           expect(axios.get).toBeCalledTimes(1)
           expect(axios.get).toBeCalledWith('https://fakestoreapi.com/products')
