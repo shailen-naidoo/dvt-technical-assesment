@@ -28,16 +28,19 @@ jobs:
 
       - name: Install dependencies
         run: |
+          . ~/.nvm/nvm.sh
           source dev.sh
           install_dependencies
 
       - name: Run linter
         run: |
+          . ~/.nvm/nvm.sh
           source dev.sh
           run_lint
 
       - name: Run unit tests
         run: |
+          . ~/.nvm/nvm.sh
           source dev.sh
           run_unit_tests
 
