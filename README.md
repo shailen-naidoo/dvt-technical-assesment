@@ -36,6 +36,8 @@ Please use this repo as your submission as a finalised pull request and notify u
 
 ---
 
+## Reviewing of the application
+
 Dear reviewer, thank you for taking the time to review my work, it is greatly appreciated. Please find the setup documentation below. I believe that it may be more important to read through this document [Challenge Vue Storefront - Shailen Naidoo](https://docs.google.com/document/d/1Hv22wkMj1MkiT8FXwB1DfKEBZPdzibTJWpEgKriOnEg/edit?usp=sharing) first before attempting to go through the application set up and code.
 
 1. Please clone this repository from GitHub on your local machine
