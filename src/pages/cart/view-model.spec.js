@@ -14,7 +14,7 @@ describe('Test Index.vue', () => {
         // 1. SETUP
         const wrapper = mount(Index)
 
-        // 2. ACTION - Emulating user has selected products in the product listing
+        // 2. ACTION - Emulating user has selected products in the product listing page
         wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 1 })
         wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 })
         wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 3 })
@@ -24,11 +24,32 @@ describe('Test Index.vue', () => {
       })
 
       test('If user no longer wants a product they can remove the item by clicking the remove button', () => {
+        // 1. SETUP
+        const wrapper = mount(Index)
 
+        // 2.1 ACTION - Emulating user has selected products in the product listing page
+        wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 1 })
+        wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 })
+        wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 3 })
+
+        // 2.2 ACTION
+        wrapper.vm.removeProductFromCart(wrapper.vm.productsSelected[0])
+
+        // 3. ASSERT
+        expect(wrapper.vm.productsSelected).toHaveLength(1)
       })
 
       test('Display the total price of the items to the user', () => {
+        // 1. SETUP
+        const wrapper = mount(Index)
 
+        // 2.1 ACTION - Emulating user has selected products in the product listing page
+        wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 1 })
+        wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 0 })
+        wrapper.vm.products.push({ title: 'A', price: 1000, category: 'Electronics', description: 'Hello World', image: 'https://image.com', quantity: 3 })
+
+        // 3. ASSERT
+        expect(wrapper.vm.totalPriceOfCart).toBe(4000)
       })
     })
   })

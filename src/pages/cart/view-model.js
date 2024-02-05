@@ -9,6 +9,15 @@ const CartViewModel = {
   computed: {
     productsSelected() {
       return this.products.filter((product) => product.quantity > 0)
+    },
+    totalPriceOfCart() {
+      return this.productsSelected
+        .reduce((previousValue, { price, quantity }) => (price * quantity) + previousValue, 0)
+    }
+  },
+  methods: {
+    removeProductFromCart(product) {
+      product.quantity = 0
     }
   }
 }
