@@ -1,4 +1,6 @@
+import { BASE_QUANTITY } from '@/constants'
 import { useProductsStore } from '@/stores/products'
+import { BASE_TOTAL_PRICE } from './constants'
 
 const CartViewModel = {
   setup() {
@@ -8,11 +10,11 @@ const CartViewModel = {
   },
   computed: {
     productsSelected() {
-      return this.products.filter((product) => product.quantity > 0)
+      return this.products.filter((product) => product.quantity > BASE_QUANTITY)
     },
     totalPriceOfCart() {
       return this.productsSelected
-        .reduce((previousValue, { price, quantity }) => (price * quantity) + previousValue, 0)
+        .reduce((previousValue, { price, quantity }) => (price * quantity) + previousValue, BASE_TOTAL_PRICE)
     }
   },
   methods: {
