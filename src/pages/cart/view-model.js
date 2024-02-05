@@ -19,7 +19,7 @@ const CartViewModel = {
   },
   methods: {
     removeProductFromCart(product) {
-      product.quantity = 0
+      product.quantity = BASE_QUANTITY
     }
   }
 }
