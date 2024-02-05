@@ -1,0 +1,36 @@
+name: Node.js Tests and Linting
+
+on:
+  push:
+    branches: [ '*' ]
+
+jobs:
+  build-test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install nvm
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+        shell: bash
+
+      - name: Install dependencies
+        run: |
+          . ~/.nvm/nvm.sh
+          source dev.sh
+          install_dependencies
+
+      - name: Run linter
+        run: |
+          . ~/.nvm/nvm.sh
+          source dev.sh
+          run_lint
+
+      - name: Run unit tests
+        run: |
+          . ~/.nvm/nvm.sh
+          source dev.sh
+          run_unit_tests
+
