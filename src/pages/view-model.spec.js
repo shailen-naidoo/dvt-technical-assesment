@@ -15,7 +15,7 @@ describe('Test Index.vue', () => {
       test('If the fetching of the list of products fails at the network level an error message should be displayed to the user', () => {
         // 1. SETUP
         axios.get.mockRejectedValueOnce('Network request failed!')
-        const alertSpy = vi.spyOn(window, 'alert')
+        const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {})
 
         // 2. ACTION
         mount(Index)
