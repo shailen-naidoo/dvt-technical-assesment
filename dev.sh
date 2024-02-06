@@ -15,3 +15,7 @@ run_unit_tests() {
 run_lint() {
   npm run lint
 }
+
+check_npm_package_updates() {
+  npx ncu
+}
